@@ -1,25 +1,29 @@
-TUI(Text User Interface)
+**TUI(Text User Interface)**
 
 User friendly access to compilers
 
-Prerequisites:
+
+**Prerequisites:**
+
   •	Python (version 2.x or version 3.x)
+  
   •	Python Curses library
+  
   •	Npyscreen library
-  •	GCC
-  •	LLVM
-
-
-Instructions:
+  
+  •	GCC or LLVM compiler
+  
+  
+**Instructions:**
 
   Step 1: Download the file
   
   Step 2: Run python script (main.py)
-  
 
-Experiment and Explore more about compilers with our TUI 
 
-Shortcuts:
+Experiment with GCC and LLVM compilers using our user friendly Compiler TUI 
+
+**Shortcuts:**
 
   •	F5: To run
   
