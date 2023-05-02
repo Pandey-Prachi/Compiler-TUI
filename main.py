@@ -911,8 +911,8 @@ class LLVMForm(npyscreen.FormMultiPageActionWithMenus):
 
                 proc = subprocess.Popen([cmd+" -o "+self.outPrefix+"output"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                 res,err = proc.communicate()
-                res=res.decode('utf-8')
-                err=err.decode('utf-8')
+                res=res.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
+                err=err.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
                 if err == b'' or err == "":
                     #No warnings, so clear warnings
                     self.warnings = []
@@ -932,8 +932,8 @@ class LLVMForm(npyscreen.FormMultiPageActionWithMenus):
                             t1.update()
                         proc = subprocess.Popen([self.outPrefix+"output"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                         res,err = proc.communicate()
-                        res=res.decode('utf-8')
-                        err=err.decode('utf-8')
+                        res=res.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
+                        err=err.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
                         t1.values+=prepareList(t1.width,["$ "+cmd])+prepareList(t1.width,res.split("\n"))
                         self.output+=prepareList(self.width-5,["$ "+cmd])+prepareList(self.width-5,res.split("\n"))
                         t1.update()
