@@ -157,7 +157,7 @@ class WarningForm(npyscreen.FormMultiPageActionWithMenus):#SplitForm):
                 relx=int((self.width/2)-len(shortcuts)/2), color=curses.COLOR_WHITE)
 
         self.name = "Output"
-        self.result = self.add(npyscreen.BoxTitle, max_height=int(self.height/2-3), name="Output", values = self.output)
+        self.result = self.add(npyscreen.BoxTitle, max_height=int(self.height/2-4), name="Output", values = self.output)
         self.nextrely+=1
         self.contents = self.add(npyscreen.BoxTitle, max_height=int(self.height/2-3), name="Errors & Warnings", values = self.warnings)
 
@@ -480,8 +480,8 @@ class MainForm(npyscreen.FormMultiPageActionWithMenus):#SplitForm):
                     cmdof = cmd
                 proc = subprocess.Popen([cmdof], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                 res,err = proc.communicate()
-                res = res.decode('utf-8')
-                err = err.decode('utf-8')
+                res = res.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
+                err = err.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
                 if err == b'' or err == "":
                     #No warnings, so clear warnings
                     self.warnings = []
@@ -494,15 +494,15 @@ class MainForm(npyscreen.FormMultiPageActionWithMenus):#SplitForm):
                     if run:
                         if self.warnings!=[]:
                             self.output = ["There are warnings"]
-                            t1.values = self.output
+                            t1.values =  ["There are warnings"]
                             t1.update()
                         else:
                             t1.values = []
                             t1.update()
                         proc = subprocess.Popen([self.outPrefix+"output"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                         res,err = proc.communicate()
-                        res=res.decode('utf-8')
-                        err=err.decode('utf-8')
+                        res=res.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
+                        err=err.decode('utf-8').replace(u'\u2018',"'").replace(u'\u2019',"'")
                         t1.values+=prepareList(t1.width,["$ "+cmd])+prepareList(t1.width,res.split("\n"))
                         self.output+=prepareList(self.width-5,["$ "+cmd])+prepareList(self.width-5,res.split("\n"))
                         t1.update()
@@ -925,7 +925,7 @@ class LLVMForm(npyscreen.FormMultiPageActionWithMenus):
                     if run:
                         if self.warnings!=[]:
                             self.output = ["There are warnings"]
-                            t1.values = self.output
+                            t1.values =  ["There are warnings"]
                             t1.update()
                         else:
                             t1.values = []
