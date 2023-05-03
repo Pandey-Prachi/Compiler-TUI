@@ -12,7 +12,7 @@ We have also given the option to enable external projects like “POLLY”.
 
 
 
-### Features of the C-DAC compiler TUI are listed below:
+### Features of the C-DAC compiler TUI:
 * Multiple compiler support (GCC & LLVM)
 * Navigation and selection of program files
 * Option for selecting any optimization level (eg. O2, Ofast etc.)
