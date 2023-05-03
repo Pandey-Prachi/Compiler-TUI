@@ -71,27 +71,27 @@ The purpose of the built-in editor is to make it easier for the user to refer to
   
   * Python Curses library
   
-  * Npyscreen library
+  * Npyscreen library (included)
   
   * GCC or LLVM compiler
   
   
 ## Instructions:
 
-  **Step 1:** Download the file
+  **Step 1:** Download the files
   
-  **Step 2:** Run python script (main.py)
+  **Step 2:** Run the python script (main.py)
 
 
 Experiment with GCC and LLVM compilers using our user friendly Compiler TUI 
 
 ## Shortcuts:
 
-  * F5: To run
+  * F5: To Compile and Run
   
   * Ctl+w : To view warnings
   
-  * Ctl+e : To edit file (Editor)
+  * Ctl+e : To edit the file (Editor)
   
   * Ctl+t : To toggle between the compilers
   
