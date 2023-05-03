@@ -37,12 +37,12 @@ After compilation is done it displays the output in a popup screen.
 
 The TUI currently provides support for GCC and LLVM compilers and we can switch between the two with the key binding Ctrl + T.
 
-
-![home1](https://user-images.githubusercontent.com/131694745/235908560-c850adb7-8db6-469e-8b80-e86f483fa5d5.png)
+<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235921178-9bdf32be-0cd5-4e57-84f8-ecd8e5479fbf.png"> </p>
 
 After compilation...
 
-![home2](https://user-images.githubusercontent.com/131694745/235908949-085b5467-94b2-4a1a-be4a-f5d713c69825.png)
+
+<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235923208-83f97ba4-727b-4eba-a288-5968c885034d.png"> </p>
 
 
 ### OUTPUT, ERRORS and WARNINGS
@@ -50,8 +50,7 @@ After compilation...
 If any errors or warnings are generated, the TUI allows the user to view it in our ERRORS and WARNINGS page which can be accessed by pressing Ctrl + W. This page also displays the output.
 
 
-![EW](https://user-images.githubusercontent.com/131694745/235909009-cd1bc3b4-375d-4235-8500-661aafc1d6c2.png)
-
+<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235923447-0707a7ee-056c-4aaa-b211-7a97865b6030.png"> </p>
 
 
 ### EDITOR
@@ -59,8 +58,7 @@ If any errors or warnings are generated, the TUI allows the user to view it in o
 The purpose of the built-in editor is to make it easier for the user to refer to the warnings and errors while editing the program file. This eliminates the extra steps of exiting the TUI and opening an editor to modify the program file.
 
 
-![editor](https://user-images.githubusercontent.com/131694745/235909086-fe273cce-8ed1-45c5-9527-1a4f36398fd5.png)
-
+<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235923632-8d3827e8-0526-416a-8d3b-f8956360f83a.png"> </p>
 
 
 
