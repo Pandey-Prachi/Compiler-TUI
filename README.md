@@ -2,12 +2,10 @@
 
 The C-DAC Compiler TUI is a Text User Interface for people interested in trying out GCC and LLVM compilers and for those learning about the different optimization passes available in these compilers. 
 
-
 While working with compilers we realized that identifying the right optimization flags with GCC and LLVM compilers is very tedious. There are a lot of flags/options available with the compilers for optimization and it is very time consuming to explore all the flags and select the appropriate ones. Hence, we came up with the idea of developing a TUI for the compilers. 
 
+The flags are organized into categories to make it easier to find them. The user can select their desired flags, compile and run any C program using those flags and view the output. It is also possible to generate dumps for different stages of compilation like CFG, AST etc. which can be viewed in our in-built editor. We have also given the support for parallel programming using OpenMP along with the option to modify environment variables.
 
-The flags are organized into categories to make it easier to find them. The user can select their desired flags, compile and run any C program using those flags and view the output. It is also possible to generate dumps for different stages of compilation like CFG, AST etc. which can be viewed in our in-built editor. A separate screen is provided for viewing the warnings and errors.
-We have also given the option to enable external projects like “POLLY”.
 
 
 
@@ -20,37 +18,48 @@ We have also given the option to enable external projects like “POLLY”.
 * Provides information for each flag/Options
 * Generate dump files
 * Easy Compilation and execution
+* Set OpenMP environment variables
+* Search feature for flags and environment variables
+* Displays information about the environment variables that can be set
 * View Errors & Warnings
 * Built-in editor to modify any program files
+* Menu for accessing different types of flags: optimization, dumps, and OpenMP
 
 
-We have divided the features into 3 modules:
+
+### Responsive layout of the TUI:
 
 
 ### HOME
 
 The HOME screen allows the user to navigate through folders and select any file easily which we can compile with a click of a mouse or using keyboard shortcuts.
 
-The HOME screen also displays the flags which are well organized into categories and User can select them according to their need or the information provided by the TUI. 
+The HOME screen also displays the flags which are well organized into categories and users can select them according to their need or the information provided by the TUI.  The flags can also be searched by pressing the <kbd>Ctrl</kbd> + <kbd>F</kbd> shortcut.
 
-After compilation is done it displays the output in a popup screen.
+Pressing the <kbd>Ctrl</kbd> + <kbd>X</kbd> shortcut key allows the user to access the menu, which contains options for changing the type of flags displayed and also an option to access the OpenMP environment variables screen.
 
-The TUI currently provides support for GCC and LLVM compilers and we can switch between the two with the key binding Ctrl + T.
+After compilation is done it displays the output in the terminal, which can be accessed from the compiler screen by pressing <kbd>Ctrl</kbd> + <kbd>W</kbd>.
 
-<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235921178-9bdf32be-0cd5-4e57-84f8-ecd8e5479fbf.png"> </p>
-
-After compilation...
+The TUI currently provides support for GCC and LLVM compilers and we can switch between the two with the key binding <kbd>Ctrl</kbd> + <kbd>T</kbd>.
 
 
-<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235923208-83f97ba4-727b-4eba-a288-5968c885034d.png"> </p>
+<!--<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235921178-9bdf32be-0cd5-4e57-84f8-ecd8e5479fbf.png"> </p>-->
+
+![image](https://github.com/Pandey-Prachi/Compiler-TUI/assets/82259448/c88d1498-8955-4b65-b97c-855dac981de5)
 
 
-### OUTPUT, ERRORS and WARNINGS
-
-If any errors or warnings are generated, the TUI allows the user to view it in our ERRORS and WARNINGS page which can be accessed by pressing Ctrl + W. This page also displays the output.
+Home Screen Menu...
 
 
-<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235923447-0707a7ee-056c-4aaa-b211-7a97865b6030.png"> </p>
+![image](https://github.com/Pandey-Prachi/Compiler-TUI/assets/82259448/dffc8b05-63cb-4d2a-b0b5-d1a6ddf2d6e3)
+
+
+### ENVIRONMENT VARIABLES
+
+The environment variables screen allows the user to set various environment variables for OpenMP programming. This makes it easier for the user to set the OpenMP environment and allows them to learn about the different variables by looking at the information provided about each of them.
+
+
+![image](https://github.com/Pandey-Prachi/Compiler-TUI/assets/82259448/21342b44-724c-4d1b-bc18-fd00282a0ed2)
 
 
 ### EDITOR
@@ -58,9 +67,7 @@ If any errors or warnings are generated, the TUI allows the user to view it in o
 The purpose of the built-in editor is to make it easier for the user to refer to the warnings and errors while editing the program file. This eliminates the extra steps of exiting the TUI and opening an editor to modify the program file.
 
 
-<p align=center> <img src="https://user-images.githubusercontent.com/131694745/235923632-8d3827e8-0526-416a-8d3b-f8956360f83a.png"> </p>
-
-
+![image](https://github.com/Pandey-Prachi/Compiler-TUI/assets/82259448/c36024c3-bbec-4dba-b8c0-60dea40e45db)
 
 
 ## Prerequisites:
@@ -83,16 +90,21 @@ The purpose of the built-in editor is to make it easier for the user to refer to
 
 Experiment with GCC and LLVM compilers using our user friendly Compiler TUI 
 
-## Shortcuts:
+## INTERACTIVE ELEMENTS:
 
-  * F5: To Compile and Run
+  * <kbd>F5</kbd>: To Compile and Run
   
-  * Ctl+w : To view warnings
+  * <kbd>Ctl</kbd>+<kbd>W</kbd> : To view warnings
   
-  * Ctl+e : To edit the file (Editor)
+  * <kbd>Ctl</kbd>+<kbd>E</kbd> : To edit the file (Editor)
   
-  * Ctl+t : To toggle between the compilers
+  * <kbd>Ctl</kbd>+<kbd>T</kbd> : To toggle between the compilers
   
-  * Ctl+q: To exit the TUI
+  * <kbd>Ctl</kbd>+<kbd>F</kbd> : Flag search
   
+  * <kbd>Ctl</kbd>+<kbd>X</kbd> : Open menu
+  
+  * <kbd>Ctl</kbd>+<kbd>Q</kbd>: To exit the TUI
+
+  Press <kbd>Tab</kbd> and <kbd>Shift</kbd> + <kbd>Tab</kbd> to move between widgets. Use the arrow keys <kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move inside widgets. Press <kbd>Space</kbd>, <kbd>Enter</kbd> or the mouse to select items.
 
