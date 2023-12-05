@@ -2035,13 +2035,6 @@ def CallSubShell(subshell, clear=False, wait=True, env=None, cwd="."): # , env=N
 
     return rtn
 
-
-def print_to_file(st):
-    file = open("debug.txt", "a")
-    file.write(str(st) + "\n")
-    file.flush()
-    file.close()
-
 ###Custom Widgets
 
 class NewMiniButtonPress(npyscreen.MiniButtonPress):
@@ -2073,7 +2066,6 @@ class NewMiniButton(npyscreen.MiniButton):
         if self.clicked:
             self.clicked = False
             mouse_id, rel_x, rel_y, z, bstate = self.interpret_mouse_event(mouse_event)
-            print_to_file("Ok clicked")
             self.h_select_exit("")
         else:
             self.clicked = True
