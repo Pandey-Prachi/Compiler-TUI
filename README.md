@@ -76,7 +76,7 @@ The purpose of the built-in editor is to make it easier for the user to refer to
   
   * Python Curses library
   
-  * Npyscreen library (included)
+  * [Npyscreen library](https://pypi.org/project/npyscreen/) (included)
   
   * GCC or LLVM compiler
   
@@ -90,7 +90,7 @@ The purpose of the built-in editor is to make it easier for the user to refer to
 
 Experiment with GCC and LLVM compilers using our user friendly Compiler TUI 
 
-## INTERACTIVE ELEMENTS:
+## Interacting with the TUI:
 
   * <kbd>F5</kbd>: To Compile and Run
   
